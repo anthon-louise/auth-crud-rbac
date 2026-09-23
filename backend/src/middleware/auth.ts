@@ -21,6 +21,7 @@ export const auth = (
     try {
       const decoded = jwt.verify(token, JWT_SECRET) as AuthUser;
       req.user = decoded;
+      next();
     } catch (err) {
       throw new AppError("Unauthorized", 401);
     }
