@@ -80,3 +80,9 @@ export const logoutUser = asynHandler(async (req: Request, res: Response) => {
     message: "Logout successfully"
   })
 })
+
+export const me = asynHandler(async (req: Request, res: Response) => {
+  res.status(200).json({
+    user: req.user
+  })
+});
