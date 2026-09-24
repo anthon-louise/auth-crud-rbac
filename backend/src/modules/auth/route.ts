@@ -1,8 +1,9 @@
 import express from "express";
-import { registerUser } from "./controller";
+import { loginUser, registerUser } from "./controller";
 
 const app = express();
 
 app.post("/register", registerUser);
+app.post("/login", loginUser);
 
 export default app;
