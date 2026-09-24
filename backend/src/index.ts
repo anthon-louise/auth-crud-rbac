@@ -4,6 +4,7 @@ import cookieParser from "cookie-parser";
 import { errorHandler } from "./middleware/errorHandler";
 
 import adminRouter from "./modules/admin/route";
+import authRouter from "./modules/auth/route";
 
 dotenv.config();
 
@@ -13,7 +14,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use("/api/admin", adminRouter);
-
+app.use("/api/auth", authRouter);
 
 app.use(errorHandler);
 
