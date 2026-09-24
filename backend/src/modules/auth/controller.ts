@@ -70,6 +70,13 @@ export const loginUser = asynHandler(async (req: Request, res: Response) => {
 
   res.cookie("token", token, COOKIE_OPTIONS);
   res.status(200).json({
-    message: "Logged in successfully"
+    message: "Loggedin successfully"
   })
 });
+
+export const logoutUser = asynHandler(async (req: Request, res: Response) => {
+  res.clearCookie("token", COOKIE_OPTIONS);
+  res.status(200).json({
+    message: "Logout successfully"
+  })
+})
