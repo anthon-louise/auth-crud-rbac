@@ -5,7 +5,4 @@ export const registerSchema = z.object({
   password: z.string().min(6, "Password is too short").max(255, "Password is too long")
 });
 
-export const loginSchema = z.object({
-  username: z.string().min(0, "Username is required").max(255, "User name is too long"),
-  password: z.string().min(0, "Password is required").max(255, "Password is too long")
-});
+export type registerInput = z.infer<typeof registerSchema>;
