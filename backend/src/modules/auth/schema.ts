@@ -6,6 +6,6 @@ export const registerSchema = z.object({
 });
 
 export const loginSchema = z.object({
-  username: z.string().min(0, "Username is required").max(255, "User name is too long"),
+  username: z.string().min(0, "Username is required").max(255, "Username is too long"),
   password: z.string().min(0, "Password is required").max(255, "Password is too long")
 });
